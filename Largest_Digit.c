@@ -1,18 +1,22 @@
 #include<stdio.h>
+int max(int n)
+{
+    int r=0,m=0;
+    while(n!=0)
+    {
+        r=n%10;
+        if(r>m)
+        {
+            m=r;
+        }
+        n=n/10;
+    }
+    return m;
+}
 int main()
 {
-	int n,q,r,s=0,max;
-	scanf("%d",&n);
-	q=n;
-	max=0;
-	while(q!=0)
-	{
-		r=q%10;
-		if(r>max)
-		{
-			max=r;
-		}
-		q=q/10;		
-	}
-	printf("%d",max);
+    int n,res;
+    scanf("%d",&n);
+    res=max(n);
+    printf("%d",res);
 }
